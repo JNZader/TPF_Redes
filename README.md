@@ -1236,3 +1236,4 @@ por IP para mantener simplicidad en la configuración DNS.
 > nslookup www.fama.com.ar
 > ```
 ------------------------------------------------------------------------
+![Topología de red](topologia.png)
