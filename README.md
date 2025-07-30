@@ -251,9 +251,10 @@ espacio de direcciones:
 > ip nat inside source static 172.16.29.131 200.45.110.129
 > ```
 
-**Ventajas del NAT estático 1:1:** - Mapeo completo de todos los puertos
-del servidor - Simplifica la configuración para múltiples servicios -
-Facilita el troubleshooting
+**Ventajas del NAT estático 1:1:** 
+- Mapeo completo de todos los puertos del servidor
+- Simplifica la configuración para múltiples servicios
+- Facilita el troubleshooting
 
 ## Servicio DHCP
 
