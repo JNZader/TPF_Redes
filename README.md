@@ -96,9 +96,9 @@ complejidad organizacional.
 
 ### Topología de Red
 
-La red implementa una topología jerárquica de tres capas: - **Capa de
-Núcleo:** Router CABA como punto central de enrutamiento - **Capa de
-Distribución:** Switches con capacidad de VLANs  
+La red implementa una topología jerárquica de tres capas:
+- **Capa de Núcleo:** Router CABA como punto central de enrutamiento
+- **Capa de Distribución:** Switches con capacidad de VLANs  
 - **Capa de Acceso:** Puertos de switch conectados a dispositivos
 finales
 
@@ -298,8 +298,6 @@ mediante `ip helper-address`.
 
 ### Servicio DNS
 
-### Servicio DNS
-
 #### Arquitectura DNS Implementada
 
 El servidor DNS tiene una configuración unificada que funciona tanto
@@ -329,18 +327,20 @@ garantizando consistencia en la resolución de nombres.
 >
 > ### 🔍 Ventajas de la Implementación Unificada
 >
-> **1. Simplicidad Administrativa** - Un solo conjunto de registros DNS
-> para mantener - Eliminación de inconsistencias entre resolución
-> interna/externa - Menor complejidad operacional
+> **1. Simplicidad Administrativa**
+> - Un solo conjunto de registros DNS para mantener
+> - Eliminación de inconsistencias entre resolución interna/externa
+> - Menor complejidad operacional
 >
-> **2. Funcionalidad Dual** - **Acceso Interno:** Los clientes internos
-> resuelven a 200.45.110.129 - **Acceso Externo:** Los clientes de
-> Internet resuelven a la misma IP - **Traducción NAT:** El router CABA
-> traduce automáticamente 200.45.110.129 → 172.16.29.131
+> **2. Funcionalidad Dual**
+> - **Acceso Interno:** Los clientes internos resuelven a 200.45.110.129
+> - **Acceso Externo:** Los clientes de Internet resuelven a la misma IP
+> - **Traducción NAT:** El router CABA traduce automáticamente 200.45.110.129 → 172.16.29.131
 >
-> **3. Escalabilidad** - Facilita la adición de nuevos servicios -
-> Preparado para futuras expansiones - Compatible con CDNs y
-> balanceadores de carga externos
+> **3. Escalabilidad**
+> - Facilita la adición de nuevos servicios
+> - Preparado para futuras expansiones
+> - Compatible con CDNs y balanceadores de carga externos
 
 #### Flujo de Resolución DNS
 
@@ -379,17 +379,18 @@ accesible desde cualquier ubicación en Internet.
 >
 > ### 🌐 Estructura Jerárquica DNS
 >
-> **Nivel 1: DNS ROOT Servers** - Servidor raíz que maneja las consultas
-> iniciales - Deriva consultas `.ar` hacia los servidores de dominio
-> nacional
+> **Nivel 1: DNS ROOT Servers**
+> - Servidor raíz que maneja las consultas iniciales
+> - Deriva consultas `.ar` hacia los servidores de dominio nacional
 >
-> **Nivel 2: DNS .ar .com.ar Server (NIC.AR)** - Servidor autoritativo
-> para el dominio `.com.ar` - IP: 200.108.148.50 - Deriva consultas
-> específicas de **fama.com.ar** hacia el servidor de FAMA
+> **Nivel 2: DNS .ar .com.ar Server (NIC.AR)**
+> - Servidor autoritativo para el dominio `.com.ar`
+> - IP: 200.108.148.50 - Deriva consultas específicas de **fama.com.ar** hacia el servidor de FAMA
 >
-> **Nivel 3: DNS FAMA Server** - Servidor autoritativo final para
-> **fama.com.ar** - IP: 200.45.110.129 (IP pública de FAMA) - Responde
-> con los registros específicos del dominio
+> **Nivel 3: DNS FAMA Server**
+> - Servidor autoritativo final para **fama.com.ar**
+> - IP: 200.45.110.129 (IP pública de FAMA)
+> - Responde con los registros específicos del dominio
 
 #### Configuración de Delegación
 
@@ -1072,13 +1073,13 @@ DNS configurados y los que se acceden directamente por IP.
 >
 > ### ⚠️ Consideraciones Técnicas
 >
-> **Acceso a Equipos de Red:** - **Servidor:** Accesible via DNS
-> (`servidor.fama.com.ar`) o IP (`172.16.29.131`) - **Routers:** Solo
-> accesibles via IP directa (sin registros DNS configurados)
+> **Acceso a Equipos de Red:**
+> - **Servidor:** Accesible via DNS (`servidor.fama.com.ar`) o IP (`172.16.29.131`)
+> - **Routers:** Solo accesibles via IP directa (sin registros DNS configurados)
 >
-> **Traducción NAT:** - **Servidor:** NAT estático 1:1 → `172.16.29.131`
-> ↔ `200.45.110.129` - **Routers:** NAT dinámico (PAT) → Pool
-> `200.45.110.130-254`
+> **Traducción NAT:**
+> - **Servidor:** NAT estático 1:1 → `172.16.29.131` ↔ `200.45.110.129`
+> - **Routers:** NAT dinámico (PAT) → Pool `200.45.110.130-254`
 
 **📌 Resumen:** El servidor cuenta con resolución DNS completa para
 facilitar el acceso, mientras que los routers se gestionan directamente
