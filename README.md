@@ -783,9 +783,10 @@ nslookup www.fama.com.ar
 | tcp | 200.45.110.129:80 | 172.16.29.131:80 | 8.8.8.7:1039  | 8.8.8.7:1039   |
 | tcp | 200.45.110.129:80 | 172.16.29.131:80 | 8.8.8.7:1040  | 8.8.8.7:1040   |
 
-**Estadísticas NAT:** - Total traducciones: 6 (1 estática, 5
-dinámicas) - Hits: 236, Misses: 71 - Pool FAMA_POOL: 126 direcciones
-disponibles, 1 asignada (0%)
+**Estadísticas NAT:** 
+- Total traducciones: 6 (1 estática, 5 dinámicas)
+- Hits: 236, Misses: 71
+- Pool FAMA_POOL: 126 direcciones disponibles, 1 asignada (0%)
 
 #### Router Santa Fe - Tabla de Rutas
 
